@@ -39,7 +39,7 @@ public class practice9 {
 			
 			// 평가 점수 70점 이상 pass, 이하 fail or 출석률 30%이상 결석시 fail
 			if(assesmentTot>=70) 
-			{System.out.println("통과");}
+			{System.out.println("통과했습니다.");}
 			
 		}while(flag);
 		sc.close();
