@@ -14,7 +14,5 @@ public class Main {
 		System.out.println(employee1.iempNo);
 		System.out.println(employee1.sEmpName);
 		System.out.println(employee1.dSalsry);
-		double result = employee1.getReturnTax(0.075);
-		System.out.println(result);
 	}
 }
