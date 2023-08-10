@@ -1,6 +1,6 @@
 package singleton.static0;
 
-public class SingleTonTest {   // 이 클래스는 외부에서 객체를 생성new할 수 없다. 
+public class SingleTonTest {   // 이 클래스는 외부에서 객체를 생성new할 수 없다. 왜? 생성자가 private이니까.
 	private static SingleTonTest instance = null;
 	
 	private String name;
