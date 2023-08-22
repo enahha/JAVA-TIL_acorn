@@ -17,7 +17,7 @@ public class min {
 
 			if(arrays[minindex] > arrays[j])
 			{
-				if(arrays[minindex] > arrays[j]) { minindex = j; }
+				 minindex = j; 
 			}
 		}
 		return arrays[minindex];
