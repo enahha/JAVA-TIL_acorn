@@ -1,0 +1,2 @@
+module classDiagram_relation {
+}
