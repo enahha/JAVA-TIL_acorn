@@ -5,17 +5,19 @@ public class Operation5_payment implements Operation{
 	@Override
 	public boolean[] bExecute(Scanner sc) {
 		int input = 0; // 주문내역 저장
-		boolean goToNext = false; 
-		boolean orderPay = false;
-		boolean[] bOrderPayAndDummy = new boolean[2];
-			bOrderPayAndDummy[0] =  orderPay;
-			bOrderPayAndDummy[1] =  false;
+		boolean goToNext = false; //
+		boolean wantToCancel = false; // 리턴 객체
+		Orders order = OrderCollection.get_orderData();
+		
+		boolean[] bOrderMoreAndDummy = new boolean[2];
+		bOrderMoreAndDummy[0] =  wantToCancel;
+		bOrderMoreAndDummy[1] =  false;
 
 		// 입력 반복문
 		while (!goToNext) {
 			// 맨트 출력 및 입력값받기
 			Mention ment = new Mention();
-			System.out.print(ment.getMENT9_PAY()); //1.카드,2.현금
+			System.out.print(ment.getMENT9_PAY_TOOL()); //1.카드,2.현금
 			String request = sc.next().toLowerCase();
 			// 입력값이 숫자인지 확인
 			boolean isNumber = CheckRequest.isNumber(request);
@@ -57,6 +59,6 @@ public class Operation5_payment implements Operation{
 		// 요청사항 반영
 		order.setTemper(input);
 
-		return wantToCancel; // 주문계속진행시 false, 취소를 원할 시 true로
+		return bOrderMoreAndDummy; // 주문계속진행시 false, 취소를 원할 시 true로
 	}
 }

@@ -5,15 +5,14 @@ import java.util.Scanner;
 public class Operation0_where implements Operation {
 
 	@Override
-	 public boolean[]bExecute(Scanner sc) {
+	 public boolean[] bExecute(Scanner sc) {
 		int input 	= 0;				// 주문내역 저장
-		boolean goToNext = false;			// 
+		boolean goToNext = false;			
 		boolean wantToCancel = false;		
 		boolean isJuice = false;
-		boolean[]bWantToCancelAndIsJuice = new boolean[2];	// 리턴 객체
+		boolean[] bWantToCancelAndIsJuice = new boolean[2];	// 리턴 객체
 			bWantToCancelAndIsJuice[0] = wantToCancel;
 			bWantToCancelAndIsJuice[1] = isJuice;
-
 		
 		// 입력 반복문
 		while(!goToNext) {
@@ -34,7 +33,7 @@ public class Operation0_where implements Operation {
 					input = changeStrToNum;			// 존재한다면 주문내역저장변수에 할당
 					//요청사항 출력하기
                 	String str1 = UnitChange.toString_where(changeStrToNum);
-                	System.out.printf(">>> %s\n", str1);       
+                	System.out.printf("%s\n", str1);       
                 	
             		goToNext = true;
             	} else {System.out.println("번호를 다시 입력바랍니다 (1~2)");}         
@@ -49,7 +48,7 @@ public class Operation0_where implements Operation {
             	
             	if(isYesOrNo && request.equals("y")) {
 					System.out.println(ment.getMENT5_ORDER_AGAIN());
-					bWantToCancelAndIsJuice[0] = true;
+                	wantToCancel = true;
                 	break;
             	}
             	else {System.out.println(ment.getMENT6_YN_ONLY());}
@@ -64,8 +63,3 @@ public class Operation0_where implements Operation {
 		}
 					
 }
-
-
-	
-	
-

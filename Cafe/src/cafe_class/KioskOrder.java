@@ -76,12 +76,12 @@ public class KioskOrder {
             if(wantToCancel) { reset(); break; }
             
             // 추가 주문
-            oper = new Operation3_oderMore();
+            oper = new Operation3_orderMore();
             bOperationlist = oper.bExecute(sc);
             orderMore = bOperationlist[0];
             // 추가주문을 하지 않는다면 주문확인으로 넘어감
             if(!orderMore) {			
-            	oper = new Operation4_oderCheck();
+            	oper = new Operation4_orderCheck();
             	bOperationlist = oper.bExecute(sc);
             	bOperationlist[0] = orderCheck;
             	break;

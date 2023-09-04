@@ -37,12 +37,12 @@ public class Operation1_menu implements Operation {
 						String sWhere = UnitChange.toString_where(iWhere);
 						String sMenu = UnitChange.toString_menu(changeStrToNum);
 						System.out.printf(">>> %s(%s)\n", sMenu, sWhere);
-						////////////////////////////////////////
+						
+						// 만약 딸바주스가 들어오면 isJuice를 true로 바꿈.
 						if(input == 3) {
-							// 만약 딸바주스가 들어오면 isJuice를 true로 바꿈.
 							bWantToCancelAndIsJuice[1] = true;		
 						}
-						////////////////////////////////////////
+						
 	            		goToNext = true;
 	            	} else {System.out.println("번호를 다시 입력바랍니다 (1~3)");}         
 	            }

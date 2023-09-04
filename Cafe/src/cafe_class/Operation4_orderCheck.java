@@ -3,14 +3,12 @@ package cafe_class;
 import java.util.List;
 import java.util.Scanner;
 
-public class Operation4_oderCheck implements Operation{
+public class Operation4_orderCheck implements Operation{
 
 	public boolean[] bExecute(Scanner sc) {
         boolean goToNext 	= false;	//반복 플래그 변수
-        boolean OrderCheck	= false;	//주문 확인결과 리턴
+//        boolean OrderCheck	= false;	//주문 확인결과 리턴
 		boolean[] bOrderCheckAndDummy = new boolean[2];
-			bOrderCheckAndDummy[0] =  OrderCheck;
-			bOrderCheckAndDummy[1] =  false;
 
         //주문내역 출력하기
         List<Orders> orderList = OrderCollection.get_orderList(); 
@@ -23,10 +21,11 @@ public class Operation4_oderCheck implements Operation{
 	        int temper = order.getTemper();
 	        String str1 = UnitChange.toString_where(where);
 	        String str2 = UnitChange.toString_menu(menu);
-	        String str3 = UnitChange.toString_temper(temper);	        
+	        String str3 = UnitChange.toString_temper(temper);	 
+	        
 	        int str4 = UnitChange.toMoney_menu(menu) + UnitChange.toMoney_where(where);
 			
-			System.out.printf("%s(%s/%s)\n", str1, str2, str3);
+			System.out.printf("%s(%s/%s)\n", str2, str1, str3);
 			System.out.println("금액 : "+str4);
         }
         System.out.print("결제하시겠습니까? (y/n): ");

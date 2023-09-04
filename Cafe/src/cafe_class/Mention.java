@@ -1,3 +1,5 @@
+package cafe_class;
+
 public class Mention {
 	
 	private final String MENT_WELCOME = "------------------------------------\n"

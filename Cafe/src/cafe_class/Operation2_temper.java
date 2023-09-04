@@ -6,7 +6,7 @@ public class Operation2_temper implements Operation{
 
 	boolean[] bWantToCancelAndIsJuice;
 	
-	public Operation2_temper(boolean[] bWantToCancelAndIsJuice) {		// 
+	public Operation2_temper(boolean[] bWantToCancelAndIsJuice) {
 		this.bWantToCancelAndIsJuice = bWantToCancelAndIsJuice;
 	}
 	
@@ -14,8 +14,9 @@ public class Operation2_temper implements Operation{
 	 public boolean[] bExecute(Scanner sc) {
 		int input 	= 0;				// 주문내역 저장
 		boolean goToNext = false;			
-		String sTemper = null;		
-		boolean wantToCancel = bWantToCancelAndIsJuice[1];
+		String sTemper = null;
+		boolean wantToCancel = false;		// 리턴 객체
+		bWantToCancelAndIsJuice[0] = wantToCancel;
 
 		Orders order = OrderCollection.get_orderData();		// 주문리스트에서 데이터 가져오기.
 		
@@ -23,7 +24,7 @@ public class Operation2_temper implements Operation{
 		while(!goToNext) {
 			Mention ment = new Mention();
 			if(bWantToCancelAndIsJuice[1]) {		// bWantToCancelAndIsJuice[1] = isJucie임.
-				System.out.println(ment.getMENT8_ICE_ONLY());
+				System.out.println(ment.getMENT10_ICE_ONLY());
 				sTemper = UnitChange.toString_temper(1);		// 이건 아이스 고정이니까 1로 두고 딸바를 하면 바로 추가주문으로 넘어가니까 취소는 필요없음.
 				input = 1;										// 요청사항반영에 필요한 인자
 				goToNext = true;
@@ -60,7 +61,6 @@ public class Operation2_temper implements Operation{
 		            	if(isYesOrNo && request.equals("y")) {
 							System.out.println(ment.getMENT5_ORDER_AGAIN());
 							wantToCancel = true;
-//							bWantToCancelAndIsJuice[0] = true;		// wantToCancel 임.
 		                	break;
 		            	}
 		            	else {System.out.println(ment.getMENT6_YN_ONLY());}

@@ -2,7 +2,7 @@ package cafe_class;
 
 import java.util.Scanner;
 
-public class Operation3_oderMore implements Operation{
+public class Operation3_orderMore implements Operation{
 	
 	@Override
 	public boolean[] bExecute(Scanner sc) {
@@ -27,8 +27,10 @@ public class Operation3_oderMore implements Operation{
 			boolean isYesOrNo = CheckRequest.isYesOrNo(request);
 			if(isYesOrNo) {
 				if(request.equals("y")) {
-					bOrderMoreAndDummy[0] = true;
+					orderMore = true;
 	        	}
+				else {
+				}
 	        	goToNext = true;
 			}
 			else {
